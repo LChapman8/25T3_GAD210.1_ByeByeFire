@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public string extinguisherType; // "CO2" or "Water"
+    public Fire.ExtinguisherType extinguisherType = Fire.ExtinguisherType.None;
     public float lifeTime = 3f;
 
     void Start()
@@ -17,10 +17,15 @@ public class Projectile : MonoBehaviour
         {
             bool correct = fire.TryExtinguish(extinguisherType);
             if (correct)
+            {
                 GameManager.Instance.AddScore(1);
-            else
-                GameManager.Instance.WrongChoice();
+            }
+            else if (fire.currentType != Fire.FireType.None)
+            {
+                GameManager.Instance.WrongChoice(fire);
+            }
         }
+
         Destroy(gameObject);
     }
 }
