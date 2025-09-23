@@ -1,4 +1,7 @@
 using UnityEngine;
+/// <summary>
+/// this script manages my extinguisher projectiles, by assigning their type. giving them a life span and allowing collision with the fires with a check of type
+/// </summary>
 
 public class Projectile : MonoBehaviour
 {

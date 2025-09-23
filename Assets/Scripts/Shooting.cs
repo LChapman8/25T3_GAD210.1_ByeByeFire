@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
 
     private float nextWaterTime = 0f;
 
-    // Reference to your canvas's GraphicRaycaster
+    
     public GraphicRaycaster canvasRaycaster;
     private PointerEventData pointerEventData;
     private EventSystem eventSystem;
